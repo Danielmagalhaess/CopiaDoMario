@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.start-screen {
+    position: absolute; /* Posiciona a tela inicial sobre a tela do jogo */
+    top: 0; /* Fica na parte superior da tela */
+    left: 0; /* Fica na parte esquerda da tela */
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 100%; /* Ocupa toda a altura da tela */
+    background: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    color: white; /* Texto branco */
+    display: flex; /* Flexbox para centralizar o conteúdo */
+    flex-direction: column; /* Alinha os elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    font-family: Arial, sans-serif; /* Fonte do texto */
+}
+.game-board {
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 2s infinite linear;
+}
+.mario{
+    width: 250px;
+    position: absolute;
+    bottom: 0px;
+    transform: scaleX(-1);
+}
+.jump {
+    animation: jump 500ms ease-out;
+}
+.clouds {
+    width: 400px;
+    position: absolute;
+    animation: clouds-animation 20s infinite linear;
+}
+.dragao {
+    position: absolute;
+    width: 500px;
+    animation: dragao-animation 4s infinite linear;
+    transform: rotateY(180deg);
+}
+.score {
+    position: absolute;
+    top: 20px; 
+    left: 20px;
+    font-size: 24px;
+    color: #fff;
+}
+@keyframes pipe-animation {
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    40%, 50%, 60% {
+        bottom: 200px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+@keyframes clouds-animation {
+    from {
+        right: -400px;
+    }
+    to {
+        right: 100%;
+    }
+}
+@keyframes dragao-animation {
+    from {
+        right: -500px;
+    }
+    to {
+        right: 100%;
+    }
+}
+/* Classe que impede a animação */
+.no-animation {
+    animation: none !important; /* Desabilita a animação */
+}
+.oculto {
+    display: none; /* Oculte o pipe */
+}
