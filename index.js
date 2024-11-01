@@ -52,11 +52,11 @@ const loop = setInterval(() => {
         dragao.style.animation = 'none';
         dragao.style.left = `${dragaoPosition}px`;
 
-        /*
-        mario.src = 'img'
-        mario.style.width = 'tamanho'
-        mario.style.marginLeft = 'para ficar proximo ao tubo batendo de frente'
-        */
+       
+        mario.src = './img/game-over.png'
+        mario.style.width = '75px'
+        mario.style.marginLeft = '50px'
+    
 
         scoreElement.innerText = `Score: ${score}`;
 
